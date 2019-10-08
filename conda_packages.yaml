@@ -1,0 +1,62 @@
+###############################################################################
+#
+#   Main software to be installed in the data analytic environment
+#
+#   AUTHOR: Maciej_Bak
+#   AFFILIATION: Swiss_Institute_of_Bioinformatics
+#   CONTACT: wsciekly.maciek@gmail.com
+#   CREATED: 07-10-2019
+#   LICENSE: GPL
+#
+###############################################################################
+---
+
+channels:
+  - conda-forge
+  - bioconda
+  - r
+
+dependencies:
+
+  # Others:
+  - perl
+  - imagemagick
+  - make
+  - cmake
+  - git
+  - cookiecutter
+
+  # Python:
+  - python
+  - ipython
+  - sqlite
+  - pandas
+  - scipy
+  - statsmodels
+  - numpy
+  - matplotlib
+  - seaborn
+  - biopython
+  - jupyterlab
+  - jinja2
+  - snakemake
+  - pymc3
+  - pytest
+  - pylint
+  - sphinx
+  
+  # R:
+  - rstudio
+  - r-base
+  - r-rcpp
+  - r-tidyverse
+  - r-numderiv
+  - r-rcolorbrewer
+  - r-shiny
+  - r-maxlik
+  - r-optparse
+  - r-devtools
+  - r-roxygen2
+  - r-usethis
+
+...
