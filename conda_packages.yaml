@@ -19,6 +19,9 @@ channels:
 dependencies:
 
   # Others:
+  #- gcc_linux-64
+  #- gxx_linux-64
+  #- gfortran_linux-64
   - perl
   - imagemagick
   - make
@@ -44,7 +47,7 @@ dependencies:
   - pytest
   - pylint
   - sphinx
-  
+
   # R:
   - rstudio
   - r-base
