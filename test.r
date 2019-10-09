@@ -12,5 +12,13 @@
 ###############################################################################
 
 # load libraries
+library("usethis")
+library("devtools")
+library("roxygen2")
 library("optparse")
-
+library("Rcpp")
+library("numDeriv")
+suppressMessages(library("maxLik"))
+library("RColorBrewer")
+library("shiny")
+suppressMessages(library("tidyverse"))
