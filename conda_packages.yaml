@@ -15,7 +15,6 @@ channels:
   - conda-forge
   - bioconda
   - r
-  - krinsman
 
 dependencies:
 
@@ -23,56 +22,56 @@ dependencies:
   - gcc_linux-64
   - gxx_linux-64
   - gfortran_linux-64
-  - perl
-  - imagemagick
   - make
   - cmake
   - git
   - cookiecutter
+  - vim
+  - perl
+  - imagemagick
   - bedtools
   - samtools
-  - vim
+  - sqlite
+  - snakemake
+  - jupyterlab
 
   # Python:
   - python
   - ipython
-  - sqlite
-  - pandas
+  - sphinx
+  - tqdm
+  - pyyaml
+  - pytest
+  - pylint
+  - jinja2
+  - biopython
+  - rpy2
+  - pybedtools
+  - pysam
+  - numpy
   - scipy
   - statsmodels
-  - numpy
+  - pandas
   - matplotlib
   - seaborn
   - plotly
   - bokeh
-  - biopython
-  - jupyterlab
-  - jinja2
-  - snakemake
   - scikit-learn
   - theano
   - pymc3
-  - pytest
-  - pylint
-  - sphinx
-  - pyyaml
-  - pybedtools
-  - pysam
-  - tqdm
 
   # R:
   - r-base
   - r-essentials
-  - rpy2
-  - r-rcpp
-  - r-tidyverse
-  - r-numderiv
-  - r-rcolorbrewer
-  - r-statmod
-  - r-maxlik
   - r-optparse
-  - r-gplots
   - r-assertthat
+  - r-rcolorbrewer
+  - r-rcpp
+  - r-numderiv
+  - r-maxlik
+  - r-statmod
+  - r-gplots
+  - r-tidyverse
   - r-tsibble
   - r-future
   - r-furrr
