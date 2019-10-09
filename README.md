@@ -10,7 +10,7 @@ This is a recipe for creating a Docker container with standard tools that I use 
 
 ## Repository
 
-This repository consist of seven files:
+This repository consist of eight files:
 
 | File  | Description |
 | ------ | ------ |
@@ -21,6 +21,13 @@ This repository consist of seven files:
 | test.py | Test script for the installed software |
 | build.log | Standard output after `docker build ...` command |
 | conda_packages.yaml | Software that will be installed with `conda` |
+| LICENSE | GNU General Public License |
+
+## License
+
+GNU General Public License
+
+
 
 ## TODO:
 
