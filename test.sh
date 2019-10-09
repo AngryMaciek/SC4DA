@@ -17,6 +17,21 @@ echo "TESTING CONDA:"
 echo $(conda --version)
 echo ""
 
+echo "TESTING C, C++ AND FORTRAN COMPILERS:"
+echo $(x86_64-conda_cos6-linux-gnu-gcc --version)
+echo $(x86_64-conda_cos6-linux-gnu-c++ --version)
+echo $(x86_64-conda_cos6-linux-gnu-gfortran --version)
+echo ""
+
+echo "TESTING MAKE AND CMAKE:"
+echo $(make --version)
+echo $(cmake --version)
+echo ""
+
+echo "TESTING VIM:"
+echo $(vim --version)
+echo ""
+
 echo "TESTING COOKIECUTTER:"
 echo $(cookiecutter --version)
 echo ""
@@ -29,20 +44,13 @@ echo "TESTING SQLITE:"
 echo $(sqlite3 --version)
 echo ""
 
+echo "TESTING IMAGEMAGICK:"
+echo $(magick --version)
+echo ""
+
 echo "TESTING BEDTOOLS AND SAMTOOLS:"
 echo $(bedtools --version)
 echo $(samtools --version)
-echo ""
-
-echo "TESTING MAKE AND CMAKE:"
-echo $(make --version)
-echo $(cmake --version)
-echo ""
-
-echo "TESTING C, C++ AND FORTRAN COMPILERS:"
-echo $(x86_64-conda_cos6-linux-gnu-gcc --version)
-echo $(x86_64-conda_cos6-linux-gnu-c++ --version)
-echo $(x86_64-conda_cos6-linux-gnu-gfortran --version)
 echo ""
 
 echo "TESTING PERL:"
@@ -53,10 +61,6 @@ echo "TESTING PYTHON, IPYTHON AND PYTHON PACKAGES:"
 echo $(python --version)
 echo "IPython "$(ipython --version)
 python test.py
-echo ""
-
-echo "TESTING IMAGEMAGICK:"
-echo $(magick --version)
 echo ""
 
 echo "TESTING SNAKEMAKE:"
