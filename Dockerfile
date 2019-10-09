@@ -19,9 +19,9 @@ ARG PATH="/root/miniconda3/bin:${PATH}"
 
 # METADATA
 LABEL base.image="ubuntu:18.04"
-LABEL version="0.0.91"
+LABEL version="0.0.92"
 LABEL software="SC4DA"
-LABEL software.version="0.0.91"
+LABEL software.version="0.0.92"
 LABEL software.description=\
 "Environment with standard packages for data analysis."
 LABEL maintainer="maciej.bak@unibas.ch"

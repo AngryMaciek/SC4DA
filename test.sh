@@ -34,13 +34,11 @@ echo $(make --version)
 echo $(cmake --version)
 echo ""
 
-#echo "TESTING C AND C++ COMPILERS:"
-#echo $(gcc --version)
-#echo $(g++ --version)
-#echo ""
-  #- gcc_linux-64
-  #- gxx_linux-64
-  #- gfortran_linux-64
+echo "TESTING C, C++ AND FORTRAN COMPILERS:"
+echo $(x86_64-conda_cos6-linux-gnu-gcc --version)
+echo $(x86_64-conda_cos6-linux-gnu-c++ --version)
+echo $(x86_64-conda_cos6-linux-gnu-gfortran --version)
+echo ""
 
 echo "TESTING PERL:"
 echo $(perl --version)

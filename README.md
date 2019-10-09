@@ -33,8 +33,9 @@ GNU General Public License
 
 * Test RStudio (server?) and JupyterLab - export port?
 * Test github, export port?
-* simplify yaml by dependancies, list major packages here, all in build.log
 * add instructions how to build/run, upload/pull from dockerhub, create VENVs
-* specify exact versions in YAML
-* sklearn, theano, pymc3, keras, tensorflow
-* add C and C++ conda compilers
+* describe all the software that is here with links
+* Conda attempts to install the newest, if you need anythign else, specify exact versions in YAML
+
+* simplify yaml by dependancies, list major packages here, all in build.log !!!
+* sklearn, theano, pymc3, keras, tensorflow !!! Rcpp test
