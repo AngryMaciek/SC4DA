@@ -61,6 +61,11 @@ echo ""
 echo "TESTING R AND R PACKAGES:"
 echo $(R --version)
 Rscript test.r
+echo ""
 
-# jupyterlab
-# rstudio
+echo "TESTING JUPYTER LAB:"
+echo $(jupyter-lab --version)
+echo ""
+
+#echo "TESTING RSTUDIO:"
+#echo $(Rstudio --version)
