@@ -30,9 +30,9 @@ This repository consist of eight files:
 GNU General Public License
 
 ## Next releases:
-* Add Rstudio, roxygen2, devtools and usethis back
-* Add keras and tensorflow
-* Add Jupyter lab TOC extension?: https://github.com/jupyterlab/jupyterlab/issues/4719   - jupyterlab-toc
+* Add Rstudio, roxygen2, devtools and usethis back, test packages and git integration in Rstudio, follow R package developmnent tutorial in VENV
+* Add DL libraries: keras and tensorflow
+* Add Jupyter lab TOC extension? There is an issue: https://github.com/jupyterlab/jupyterlab/issues/4719   - jupyterlab-toc (in YAML) from   - krinsman
 
 
 
@@ -42,11 +42,10 @@ GNU General Public License
 
 ## TODO:
 
-* CONDA ENV: Test JupyterLab test R notebooks, Rpy2, compiler calls in bash cells
+* CONDA ENV: Test JupyterLab test R notebooks with Rcpp, Rpy2, compiler calls in bash cells
 * README: add instructions how to build/run, upload/pull from dockerhub, create VENVs, describe all the software that is here with links, Conda attempts to install the newest, if you need anythign else, specify exact versions in YAML, list major packages here, all in build.log !!!
-* simplify yaml by dependancies
-* clean all the test files
 * **theano, pymc3!!!**
+* commit cleaned tests and yaml
 
 ## Notes:
 * Rstudio is not available since it is not available by conda. Therefore no packages development. All interactive work in Jupyter Lab, but interactive work and git are for conda env, not docker! Dual action: container and venv (for dev)
