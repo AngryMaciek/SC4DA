@@ -43,7 +43,11 @@ dependencies:
   - jupyterlab
   - jinja2
   - snakemake
+  - scikit-learn
+  - theano
   - pymc3
+  - keras
+  - tensorflow
   - pytest
   - pylint
   - sphinx

@@ -25,13 +25,9 @@ This repository consist of seven files:
 ## TODO:
 
 * Test RStudio (server?) and JupyterLab - export port?
-* Test git+github, export port?
+* Test github, export port?
 * simplify yaml by dependancies, list major packages here, all in build.log
 * add instructions how to build/run, upload/pull from dockerhub, create VENVs
-* test creating Python packages
-* test creating R packages
 * specify exact versions in YAML
-* test all in SH
-* test all in PY
-* test all in R
+* sklearn, theano, pymc3, keras, tensorflow
 * add C and C++ conda compilers

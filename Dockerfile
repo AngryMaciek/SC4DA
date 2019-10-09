@@ -19,9 +19,9 @@ ARG PATH="/root/miniconda3/bin:${PATH}"
 
 # METADATA
 LABEL base.image="ubuntu:18.04"
-LABEL version="0.0.9"
+LABEL version="0.0.91"
 LABEL software="SC4DA"
-LABEL software.version="0.0.9"
+LABEL software.version="0.0.91"
 LABEL software.description=\
 "Environment with standard packages for data analysis."
 LABEL maintainer="maciej.bak@unibas.ch"
@@ -56,6 +56,4 @@ COPY test.r .
 COPY test.py .
 
 # TEST UPON CONTAINER LAUNCH
-#CMD ["bash", "test.sh"]
-#CMD ["Rscript", "test.r"]
-#CMD ["python", "test.py"]
+CMD ["bash", "test.sh"]
