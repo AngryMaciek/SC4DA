@@ -29,6 +29,11 @@ echo "TESTING SQLITE:"
 echo $(sqlite3 --version)
 echo ""
 
+echo "TESTING BEDTOOLS AND SAMTOOLS:"
+echo $(bedtools --version)
+echo $(samtools --version)
+echo ""
+
 echo "TESTING MAKE AND CMAKE:"
 echo $(make --version)
 echo $(cmake --version)
@@ -65,7 +70,3 @@ echo ""
 
 echo "TESTING JUPYTER LAB:"
 echo $(jupyter-lab --version)
-echo ""
-
-#echo "TESTING RSTUDIO:"
-#echo $(Rstudio --version)

@@ -15,6 +15,7 @@ channels:
   - conda-forge
   - bioconda
   - r
+  - krinsman
 
 dependencies:
 
@@ -28,6 +29,9 @@ dependencies:
   - cmake
   - git
   - cookiecutter
+  - bedtools
+  - samtools
+  - vim
 
   # Python:
   - python
@@ -39,6 +43,8 @@ dependencies:
   - numpy
   - matplotlib
   - seaborn
+  - plotly
+  - bokeh
   - biopython
   - jupyterlab
   - jinja2
@@ -46,24 +52,29 @@ dependencies:
   - scikit-learn
   - theano
   - pymc3
-  - keras
-  - tensorflow
   - pytest
   - pylint
   - sphinx
+  - pyyaml
+  - pybedtools
+  - pysam
+  - tqdm
 
   # R:
-  - rstudio
   - r-base
+  - r-essentials
+  - rpy2
   - r-rcpp
   - r-tidyverse
   - r-numderiv
   - r-rcolorbrewer
-  - r-shiny
+  - r-statmod
   - r-maxlik
   - r-optparse
-  - r-devtools
-  - r-roxygen2
-  - r-usethis
+  - r-gplots
+  - r-assertthat
+  - r-tsibble
+  - r-future
+  - r-furrr
 
 ...
