@@ -22,6 +22,9 @@ dependencies:
   - gcc_linux-64
   - gxx_linux-64
   - gfortran_linux-64
+  #- clang_osx-64
+  #- clangxx_osx-64
+  #- gfortran_osx-64
   - make
   - cmake
   - git
@@ -73,5 +76,6 @@ dependencies:
   - r-tsibble
   - r-future
   - r-furrr
+  - r-cowplot
 
 ...
