@@ -4,6 +4,11 @@ Swiss Institute of Bioinformatics*
 
 This is a recipe for creating an environment with standard tools that I use for widely understood data analysis.
 
+## Notes:
+* Rstudio is not available since it is not available by conda. Therefore no packages development. All interactive work in Jupyter Lab, but interactive work and git are for conda env, not docker! Dual action: container and venv (for dev)
+* it can also serve as singularity container for snakemake rules, snakemake called from venv that has it (this one!)
+* Anaconda gCC, g++, fortran compilers
+
 ## Creating and running a docker container
 
 ## Creating a conda virtual environment
@@ -42,13 +47,7 @@ GNU General Public License
 
 ## TODO:
 
+* Notes
 * CONDA ENV: Test JupyterLab test R notebooks with Rcpp, Rpy2, compiler calls in bash cells
 * README: add instructions how to build/run, upload/pull from dockerhub, create VENVs, describe all the software that is here with links, Conda attempts to install the newest, if you need anythign else, specify exact versions in YAML, list major packages here, all in build.log !!!
 * **theano, pymc3!!!**
-* commit cleaned tests and yaml
-
-## Notes:
-* Rstudio is not available since it is not available by conda. Therefore no packages development. All interactive work in Jupyter Lab, but interactive work and git are for conda env, not docker! Dual action: container and venv (for dev)
-* it can also serve as singularity container for snakemake rules, snakemake called from venv that has it (this one!)
-* Anaconda gCC, g++, fortran compilers
-
