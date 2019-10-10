@@ -36,5 +36,3 @@ import bokeh
 import plotly
 import rpy2
 import sklearn
-#import theano
-#import pymc3

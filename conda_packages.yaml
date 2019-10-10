@@ -57,8 +57,6 @@ dependencies:
   - plotly
   - bokeh
   - scikit-learn
-  - theano
-  - pymc3
 
   # R:
   - r-base
