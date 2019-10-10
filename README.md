@@ -16,6 +16,10 @@ cd;
 git clone https://github.com/AngryMaciek/SC4DA.git;
 docker build -f SC4DA/Dockefile --tag=sc4da:v1.0.0 SC4DA
 ```
+Alternatively, you can pull the container from the dockerhub:
+```bash
+docker pull angrymaciek/sc4da
+```
 To test if all the software is installed properly type:
 ```bash
 docker run sc4da:v1.0.0
@@ -31,6 +35,9 @@ docker exec -it [CONTAINER_ID] [COMMAND]
 
 ## Creating a conda virtual environment
 To avoid technical difficulties I prefer to have a virtual environment for interactive work and development. The requirement here is that in order to build one the user needs to have [miniconda installed](https://conda.io/projects/conda/en/latest/user-guide/install/index.html). Virtual environment created based on this repository will have exactly the same software as the container.  
+
+Importrant:  
+Plase make sure that YAML specifies compiler packages that fit your OS. In other case, modify entries.  
   
 In order to create a conda virtual environment type:
 ```bash
@@ -102,6 +109,6 @@ GNU General Public License
 
 ## TODO 4 RELEASE1:
 
-* CONDA ENV: Test JupyterLab test R notebooks with Rcpp, Rpy2, compiler calls in bash cells
-* it can also serve as singularity container for snakemake rules, snakemake called from venv that has it (this one!) | add this note after I uploaad to my DOckerhub, instruction how to pull from dockerhub
+* once everything works push 1.0.0 to dockerhub
+* it can also serve as singularity container for snakemake rules, snakemake called from venv that has it (this one!)
 * test all the instructions described here
