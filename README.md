@@ -51,6 +51,10 @@ Activate it with:
 conda activate ~/ENV
 ```
 
+## Snakemake pipelines execution
+
+On top of all the above, this container might also serve as an environment to execute [snakemake](https://snakemake.readthedocs.io/en/stable/) pipelines in. Utilising snakemake built-in mechanisms `--use-conda` and `--use-singularity` you can either provide path to the YAML file (to automatically build a virtual environment for all the rules to be executed in) or a URL to this particular container on dockerhub (which will be pulled automatically). Moreover, this environment contains snakemake by itself in order to ease workflow development process.
+
 ## Software
 Versions of software listed in the YAML file are not specified on purpose. Due to high number of packages and ambiguity of the host OS (in case of virtual environment creation) matching all the versions is left out to `conda` which always attempts to install the newest versions possible. In case the user requires a specific version of a given package/tool please specify it in the YAML prior to building the environment.  
   
@@ -92,23 +96,19 @@ This repository consist of eight files:
 | test.r | Test script for the installed software |
 | test.py | Test script for the installed software |
 | build.log | Standard output after `docker build ...` command |
-| conda_packages.yaml | Software that will be installed with `conda` |
+| conda_packages.yaml | Software that will be installed with `containers or virtual environments, as you wish.da` |
 | LICENSE | GNU General Public License |
 
 ## License
 
-GNU General Public License
+GNU General Public License v3.0
 
 ## Next releases:
 * simplify the image: https://jcrist.github.io/conda-docker-tips.html
-* Add Rstudio, roxygen2, devtools and usethis back, test packages and git integration in Rstudio, follow R package developmnent tutorial in VENV
+* add singularity inside the YAML so that user can activate this particular env to execute snakemake as well.
+* Add Rstudio, roxygen2, devtools and usethis back, test packages and git integration in Rstudio, (follow R package developmnent tutorial in VENV)
 * Add theano and pymc3; issue: [https://github.com/Theano/Theano/issues/6724](https://github.com/Theano/Theano/issues/6724)
 * Add DL libraries: keras and tensorflow after Theano issue is solved
 * Add Jupyter lab TOC extension? There is an issue: https://github.com/jupyterlab/jupyterlab/issues/4719   - jupyterlab-toc (in YAML) from   - krinsman
 
 
-
-## TODO 4 RELEASE1:
-* it can also serve as singularity container for snakemake rules, snakemake called from venv that has it (this one!), testthat locally
-* RUN commands while use as singularity images?
-* test all the instructions described here
