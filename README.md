@@ -14,15 +14,15 @@ Provided you have `docker` installed. In order to build a container clone this r
 ```bash
 cd;
 git clone https://github.com/AngryMaciek/SC4DA.git;
-docker build -f SC4DA/Dockefile --tag=sc4da:v1.1.0 SC4DA
+docker build -f SC4DA/Dockefile --tag=sc4da:1.1.0 SC4DA
 ```
 To test if all the software is installed properly type:
 ```bash
-docker run sc4da:v1.1.0
+docker run sc4da:1.1.0
 ```
 Activate the container, explore the commands and play inside with:
 ```bash
-docker run -it sc4da:v1.1.0 bash
+docker run -it sc4da:1.1.0 bash
 ```
 Provided that the container is already running you can execute commands within with:
 ```bash
