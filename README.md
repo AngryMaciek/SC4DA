@@ -14,24 +14,25 @@ Provided you have `docker` installed. In order to build a container clone this r
 ```bash
 cd;
 git clone https://github.com/AngryMaciek/SC4DA.git;
-docker build -f SC4DA/Dockefile --tag=sc4da:v1.0.0 SC4DA
-```
-Alternatively, you can pull the container from the dockerhub:
-```bash
-docker pull angrymaciek/sc4da
+docker build -f SC4DA/Dockefile --tag=sc4da:v1.1.0 SC4DA
 ```
 To test if all the software is installed properly type:
 ```bash
-docker run sc4da:v1.0.0
+docker run sc4da:v1.1.0
 ```
 Activate the container, explore the commands and play inside with:
 ```bash
-docker run -it sc4da:v1.0.0 bash
+docker run -it sc4da:v1.1.0 bash
 ```
 Provided that the container is already running you can execute commands within with:
 ```bash
 docker exec -it [CONTAINER_ID] [COMMAND]
 ```
+Alternatively to building you can pull the container from the dockerhub:
+```bash
+docker pull angrymaciek/sc4da:1.1.0
+```
+And execute the above commands with `angrymaciek/sc4da:1.1.0` container.
 
 ## Creating a conda virtual environment
 To avoid technical difficulties I prefer to have a virtual environment for interactive work and development. The requirement here is that in order to build one the user needs to have [miniconda installed](https://conda.io/projects/conda/en/latest/user-guide/install/index.html). Virtual environment created based on this repository will have exactly the same software as the container.  
@@ -64,7 +65,7 @@ Available software include:
 * [sqlite](https://www.sqlite.org/index.html)
 * [snakemake](https://snakemake.readthedocs.io/en/stable/)
 *  [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/)
-* [sphinx](http://www.sphinx-doc.org/en/master/), [tqdm](https://github.com/tqdm/tqdm), [pytest](https://docs.pytest.org/en/latest/), [Pylint](https://www.pylint.org/)
+* [sphinx](http://www.sphinx-doc.org/en/master/), [tqdm](https://github.com/tqdm/tqdm), [pytest](https://docs.pytest.org/en/latest/), [Pylint](https://www.pylint.org/), [Black](https://github.com/psf/black)
 * [Biopython](https://biopython.org/)
 * [rpy2](https://rpy2.readthedocs.io/en/version_2.8.x/)
 * [NumPy](https://numpy.org/), [SciPy](https://www.scipy.org/), [Statsmodels](https://www.statsmodels.org/stable/index.html), [pandas](https://pandas.pydata.org/)
@@ -75,6 +76,7 @@ Available software include:
 * [Rcpp](https://cran.r-project.org/web/packages/Rcpp/index.html), [numDeriv](https://cran.r-project.org/web/packages/numDeriv/index.html), [maxLik](https://cran.r-project.org/web/packages/maxLik/index.html), [statmod](https://cran.r-project.org/web/packages/statmod/index.html)
 * [gplots](https://cran.r-project.org/web/packages/gplots/index.html), [tidyverse](https://www.tidyverse.org/), [tsibble](https://cran.r-project.org/web/packages/tsibble/index.html)
 * [future](https://cran.r-project.org/web/packages/future/index.html), [furrr](https://cran.r-project.org/web/packages/furrr/index.html)
+* [cowplot](https://cran.r-project.org/web/packages/cowplot/vignettes/introduction.html)
 
 ... as well as their dependencies. Full installation logs are available in the build.log file of this repository (which is essentially a redirected standard output of `docker build`). To learn about exact versions of the installed packages please refer to that file.
 
@@ -98,17 +100,15 @@ This repository consist of eight files:
 GNU General Public License
 
 ## Next releases:
+* simplify the image: https://jcrist.github.io/conda-docker-tips.html
 * Add Rstudio, roxygen2, devtools and usethis back, test packages and git integration in Rstudio, follow R package developmnent tutorial in VENV
 * Add theano and pymc3; issue: [https://github.com/Theano/Theano/issues/6724](https://github.com/Theano/Theano/issues/6724)
-* Add DL libraries: keras and tensorflow after Theano issue us solved
+* Add DL libraries: keras and tensorflow after Theano issue is solved
 * Add Jupyter lab TOC extension? There is an issue: https://github.com/jupyterlab/jupyterlab/issues/4719   - jupyterlab-toc (in YAML) from   - krinsman
 
 
 
-
-
 ## TODO 4 RELEASE1:
-
-* once everything works push 1.0.0 to dockerhub
-* it can also serve as singularity container for snakemake rules, snakemake called from venv that has it (this one!)
+* it can also serve as singularity container for snakemake rules, snakemake called from venv that has it (this one!), testthat locally
+* RUN commands while use as singularity images?
 * test all the instructions described here
