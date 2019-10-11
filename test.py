@@ -19,6 +19,7 @@ import argparse
 import setuptools
 import pytest
 import pylint
+import black
 import sphinx
 import jinja2
 import tqdm

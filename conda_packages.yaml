@@ -46,6 +46,7 @@ dependencies:
   - pyyaml
   - pytest
   - pylint
+  - black
   - jinja2
   - biopython
   - rpy2
