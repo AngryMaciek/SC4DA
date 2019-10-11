@@ -14,7 +14,7 @@ Provided you have `docker` installed. In order to build a container clone this r
 ```bash
 cd;
 git clone https://github.com/AngryMaciek/SC4DA.git;
-docker build -f SC4DA/Dockefile --tag=sc4da:1.1.0 SC4DA
+docker build -f SC4DA/Dockerfile --tag=sc4da:1.1.0 SC4DA
 ```
 To test if all the software is installed properly type:
 ```bash
