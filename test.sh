@@ -31,6 +31,10 @@ echo "TESTING VIM:"
 echo $(vim --version)
 echo ""
 
+echo "TESTING SINGULARITY:"
+echo $(singularity --version)
+echo ""
+
 echo "TESTING COOKIECUTTER:"
 echo $(cookiecutter --version)
 echo ""

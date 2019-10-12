@@ -15,9 +15,9 @@ FROM continuumio/miniconda3:4.7.10
 
 # METADATA
 LABEL base.image="miniconda3:4.7.10"
-LABEL version="1.3.0"
+LABEL version="1.5.0"
 LABEL software="SC4DA"
-LABEL software.version="1.3.0"
+LABEL software.version="1.5.0"
 LABEL software.description=\
 "Environment with standard packages for data analysis."
 LABEL maintainer="wsciekly.maciek@gmail.com"

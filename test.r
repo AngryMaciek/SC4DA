@@ -12,16 +12,20 @@
 ###############################################################################
 
 # load libraries
+
 library("optparse")
 suppressMessages(library("assertthat"))
+library("RColorBrewer")
+
 library("Rcpp")
 library("numDeriv")
 suppressMessages(library("maxLik"))
-library("RColorBrewer")
-suppressMessages(library("gplots"))
 library("statmod")
+
+suppressMessages(library("tidyverse"))
+suppressMessages(library("gplots"))
+suppressMessages(library("cowplot"))
+suppressMessages(suppressWarnings(library("tsibble")))
+
 library("future")
 library("furrr")
-suppressMessages(library("tidyverse"))
-suppressMessages(suppressWarnings(library("tsibble")))
-suppressMessages(library("cowplot"))

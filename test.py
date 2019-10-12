@@ -26,6 +26,7 @@ import black
 import sphinx
 import jinja2
 import tqdm
+import rpy2
 
 import pybedtools
 import pysam
@@ -41,8 +42,6 @@ import matplotlib
 import seaborn
 import bokeh
 import plotly
-
-import rpy2
 
 import sklearn
 import mkl
