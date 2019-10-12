@@ -37,3 +37,7 @@ import bokeh
 import plotly
 import rpy2
 import sklearn
+import mkl
+import pygpu
+import theano
+import pymc3

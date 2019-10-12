@@ -15,16 +15,11 @@ channels:
   - conda-forge
   - bioconda
   - r
+  - anaconda
 
 dependencies:
 
   # Others:
-  - gcc_linux-64
-  - gxx_linux-64
-  - gfortran_linux-64
-  #- clang_osx-64
-  #- clangxx_osx-64
-  #- gfortran_osx-64
   - make
   - cmake
   - git
@@ -61,6 +56,12 @@ dependencies:
   - plotly
   - bokeh
   - scikit-learn
+  - blas
+  - libblas
+  - mkl
+  - mkl-service
+  - theano
+  - pymc3
 
   # R:
   - r-base
