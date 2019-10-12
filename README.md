@@ -38,7 +38,8 @@ And execute the above commands with `angrymaciek/sc4da:1.1.0` container.
 To avoid technical difficulties I prefer to have a virtual environment for interactive work and development. The requirement here is that in order to build one the user needs to have [miniconda installed](https://conda.io/projects/conda/en/latest/user-guide/install/index.html). Virtual environment created based on this repository will have exactly the same software as the container.  
 
 Importrant:  
-Plase make sure that YAML specifies compiler packages that fit your OS. In other case, modify entries.  
+* Supported operating systems are Linux and macOS with 64-bit architecture.
+* Plase make sure that YAML specifies compiler packages that fit your OS. In other case, modify entries.  
   
 In order to create a conda virtual environment type:
 ```bash
@@ -96,7 +97,7 @@ This repository consist of eight files:
 | test.r | Test script for the installed software |
 | test.py | Test script for the installed software |
 | build.log | Standard output after `docker build ...` command |
-| conda_packages.yaml | Software that will be installed with `containers or virtual environments, as you wish.da` |
+| conda_packages.yaml | Software that will be installed with `conda` |
 | LICENSE | GNU General Public License |
 
 ## License
@@ -104,11 +105,8 @@ This repository consist of eight files:
 GNU General Public License v3.0
 
 ## Next releases:
-* simplify the image: https://jcrist.github.io/conda-docker-tips.html
-* add singularity inside the YAML so that user can activate this particular env to execute snakemake as well.
-* Add Rstudio, roxygen2, devtools and usethis back, test packages and git integration in Rstudio, (follow R package developmnent tutorial in VENV)
-* Add theano and pymc3; issue: [https://github.com/Theano/Theano/issues/6724](https://github.com/Theano/Theano/issues/6724)
-* Add DL libraries: keras and tensorflow after Theano issue is solved
-* Add Jupyter lab TOC extension? There is an issue: https://github.com/jupyterlab/jupyterlab/issues/4719   - jupyterlab-toc (in YAML) from   - krinsman
-
+* Add Rstudio, roxygen2, devtools and usethis back, test package development and git integration in Rstudio (follow R package developmnent tutorial in VENV)
+* Tensorflow raises warnings since it is not compatible with numpy 1.17+: https://github.com/tensorflow/tensorflow/issues/30427, rebuild with new TF once it is available.
+* Simplify the image: https://jcrist.github.io/conda-docker-tips.html
+* Add Jupyter lab TOC extension? There is an issue: https://github.com/jupyterlab/jupyterlab/issues/4719 | conda: jupyterlab-toc from krinsman channel
 

@@ -14,18 +14,18 @@
 # load libraries
 
 library("optparse")
-suppressMessages(library("assertthat"))
+library("assertthat")
 library("RColorBrewer")
 
 library("Rcpp")
 library("numDeriv")
-suppressMessages(library("maxLik"))
+library("maxLik")
 library("statmod")
 
-suppressMessages(library("tidyverse"))
-suppressMessages(library("gplots"))
-suppressMessages(library("cowplot"))
-suppressMessages(suppressWarnings(library("tsibble")))
+library("tidyverse")
+library("gplots")
+library("cowplot")
+library("tsibble")
 
 library("future")
 library("furrr")
