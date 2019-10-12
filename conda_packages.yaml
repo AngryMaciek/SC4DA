@@ -62,6 +62,8 @@ dependencies:
   - mkl-service
   - theano
   - pymc3
+  - tensorflow
+  - keras
 
   # R:
   - r-base
