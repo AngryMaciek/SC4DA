@@ -106,6 +106,7 @@ GNU General Public License v3.0
 * add r-projecttemplate
 * Add BeakerX
 * add Jupyter widgets
+* add PyTorch
 * Tensorflow raises warnings since it is not compatible with numpy 1.17+: https://github.com/tensorflow/tensorflow/issues/30427, rebuild with new TF once it is available.
 * Simplify the image: https://jcrist.github.io/conda-docker-tips.html
 * Add Jupyter lab TOC extension? There is an issue: https://github.com/jupyterlab/jupyterlab/issues/4719 | conda: jupyterlab-toc from krinsman channel
