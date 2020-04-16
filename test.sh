@@ -8,7 +8,7 @@
 #   AFFILIATION: Swiss_Institute_of_Bioinformatics
 #   CONTACT: wsciekly.maciek@gmail.com
 #   CREATED: 06-10-2019
-#   LICENSE: GPL
+#   LICENSE: Apache_2.0
 #   USAGE: bash test.sh
 #
 ###############################################################################

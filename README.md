@@ -99,7 +99,7 @@ This repository consist of eight files:
 
 ## License
 
-GNU General Public License v3.0
+Apache 2.0
 
 ## Next release:
 * Add Rstudio, roxygen2, devtools and usethis back, test package development and git integration in Rstudio (follow R package developmnent tutorial in VENV)

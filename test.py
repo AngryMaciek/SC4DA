@@ -6,7 +6,7 @@
 #   AFFILIATION: Swiss_Institute_of_Bioinformatics
 #   CONTACT: wsciekly.maciek@gmail.com
 #   CREATED: 07-10-2019
-#   LICENSE: GPL
+#   LICENSE: Apache_2.0
 #   USAGE: python test.py
 #
 ##############################################################################
