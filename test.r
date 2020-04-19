@@ -23,6 +23,7 @@ library("maxLik")
 library("statmod")
 
 library("tidyverse")
+library("tidymodels")
 library("gplots")
 library("cowplot")
 library("tsibble")

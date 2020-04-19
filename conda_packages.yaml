@@ -78,6 +78,7 @@ dependencies:
   - r-statmod
   - r-gplots
   - r-tidyverse
+  - r-tidymodels
   - r-tsibble
   - r-future
   - r-furrr
