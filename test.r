@@ -13,20 +13,28 @@
 
 # load libraries
 
-library("optparse")
 library("assertthat")
+library("optparse")
+library("usethis")
+library("roxygen2")
+library("devtools")
+library("ProjectTemplate")
+library("future")
+library("furrr")
+
+library("lintr")
+library("styler")
+
 library("RColorBrewer")
+library("gplots")
+library("cowplot")
 
 library("Rcpp")
 library("numDeriv")
 library("maxLik")
 library("statmod")
-
 library("tidyverse")
 library("tidymodels")
-library("gplots")
-library("cowplot")
 library("tsibble")
 
-library("future")
-library("furrr")
+print("=== TEST FINISHED SUCCESSFULLY ===")

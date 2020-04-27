@@ -11,42 +11,31 @@
 #
 ##############################################################################
 
-# imports
+# import packages
 
-import os
-import sys
-import time
-import logging
-import argparse
-import setuptools
-
-import pytest
-import pylint
-import black
-import sphinx
-import jinja2
-import tqdm
-import rpy2
-
-import pybedtools
-import pysam
+import simplegeneric
 import yaml
+import jinja2
+import pytest
+import tqdm
 import Bio
 
 import numpy
 import scipy
-import statsmodels
 import pandas
+import statsmodels
+import pymc3
 
 import matplotlib
+import matplotlib_venn
 import seaborn
 import bokeh
 import plotly
 
 import sklearn
-import mkl
-import pygpu
 import theano
-import pymc3
 import tensorflow
 import keras
+import torch
+
+print("=== TEST FINISHED SUCCESSFULLY ===")
