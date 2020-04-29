@@ -13,19 +13,19 @@ Having a dedicated environment for software development & data analysis can spee
 
 ## About
 
-* The following repository might be utilized to build a *conda* virtual environment asas a *docker* container
+* The following repository might be utilized to build a *conda* virtual environment as a *docker* container
 
 * It may serve for both exploratory data analysis, tool/package/workflow development as well as a container to execute the software in.
 
-* The architecture behind base image is linux, 64bit. Virtual environment is dedicated to this system.
+* The architecture behind *docker* base image is linux, 64bit. Virtual environment is dedicated to this system.
 
-* Interactive data inspection can be carried out in Jupyter Lab (Python and R kernels) or RStudio (R).
+* Interactive data inspection can be carried out in Jupyter Lab (kernels: Python 3, R, Clojure, Groovy, Java, Kotlin, Scala, SQL) or RStudio (R).
 
 * Main tools and packages of the environment are listed in `environment.yml`. To see the full list please take a look at `docker-build.log`.
 
 ## Creating and running a docker container
 
-Provided you have `docker` installed.  
+Provided you have *docker* installed.  
 In order to build a container please clone this repository and execute `docker build`:
 
 ```bash
@@ -79,8 +79,6 @@ On top of all the above, this environment might be also utilised to execute Snak
 
 ## Software
 
-Versions of software listed in the YAML file are not specified on purpose. Due to high number of packages matching all the versions is left out to `conda` which always attempts to install the newest versions possible. In case the user requires a specific version of a given package/tool please specify it in the YAML prior to building the environment.
-
 Available software include:
 
 * [GNU Bash](https://www.gnu.org/software/bash/)
@@ -124,7 +122,7 @@ This repository consist of nine files:
 | README.md | (this file) |
 | LICENSE | Apache License ver 2.0 |
 | create-conda-virtual-environment.sh | Bash script to create *conda* virtual environment |
-| environment.yml | Software which will be installed with `conda` |
+| environment.yml | Software which will be installed with *conda* |
 | Dockerfile | Instructions for `docker build` |
 | docker-build.log | Standard output after `docker build` command |
 | test.sh | Bash test script for the installed software |
