@@ -83,73 +83,37 @@ Versions of software listed in the YAML file are not specified on purpose. Due t
 
 Available software include:
 
+* [GNU Bash](https://www.gnu.org/software/bash/)
+
 * [Python 3](https://www.python.org/), [IPython](https://ipython.org/), [Perl](https://www.perl.org/) and [R](https://www.r-project.org/) interpreters
 
-* [Make](https://www.gnu.org/software/make/manual/make.html) and [CMake](https://cmake.org/)
+* [Beautysh](https://github.com/lovesegfault/beautysh), [ShellCheck](https://github.com/koalaman/shellcheck), [styler](https://github.com/r-lib/styler), [lintr](https://github.com/jimhester/lintr), [Black](https://github.com/psf/black), [Pylint](https://www.pylint.org/), [ClangFormat](https://clang.llvm.org/docs/ClangFormat.html), [cpplint](https://github.com/cpplint/cpplint)
 
-* [Git](https://git-scm.com/)
+* [Make](https://www.gnu.org/software/make/manual/make.html), [CMake](https://cmake.org/), [Snakemake](https://snakemake.readthedocs.io/en/stable/), [Nextflow](https://www.nextflow.io/) and [nf-core](https://nf-co.re/)
 
-* [Cookiecutter](https://github.com/cookiecutter/cookiecutter)
+* [Graphviz](https://www.graphviz.org/) and [ImageMagick](https://imagemagick.org/)
 
-* [Vim](https://github.com/vim/vim)
+* [Vim](https://github.com/vim/vim), [Git](https://git-scm.com/), [Cookiecutter](https://github.com/cookiecutter/cookiecutter), [sphinx](http://www.sphinx-doc.org/en/master/)
+
+* [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/), [BeakerX](http://beakerx.com/), [RStudio](https://rstudio.com/)
 
 * [Singularity](https://singularity.lbl.gov/)
 
 * [sqlite](https://www.sqlite.org/index.html)
 
-* [snakemake](https://snakemake.readthedocs.io/en/stable/)
-
-* [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/)
-
-* [Node.js](https://nodejs.org/en/)
-
-* [Nextflow](https://www.nextflow.io/) and [nf-core](https://nf-co.re/)
-
-* [sphinx](http://www.sphinx-doc.org/en/master/), [tqdm](https://github.com/tqdm/tqdm), [pytest](https://docs.pytest.org/en/latest/), [Pylint](https://www.pylint.org/), [Black](https://github.com/psf/black)
-
-* [Biopython](https://biopython.org/)
-
-* [GNU Bash](https://www.gnu.org/software/bash/)
-
-* [Graphviz](https://www.graphviz.org/) and [ImageMagick](https://imagemagick.org/)
-
-* [cpplint](https://github.com/cpplint/cpplint) and [ClangFormat](https://clang.llvm.org/docs/ClangFormat.html)
-
-* [RStudio](https://rstudio.com/)
-
-* [BeakerX](http://beakerx.com/)
-
-* [Beautysh](https://github.com/lovesegfault/beautysh) and [ShellCheck](https://github.com/koalaman/shellcheck)
-
-* [Jinja](https://jinja.palletsprojects.com/)
+* [Biopython](https://biopython.org/), [tqdm](https://github.com/tqdm/tqdm), [pytest](https://docs.pytest.org/en/latest/), [Jinja](https://jinja.palletsprojects.com/)
 
 * [NumPy](https://numpy.org/), [SciPy](https://www.scipy.org/), [Statsmodels](https://www.statsmodels.org/stable/index.html), [pandas](https://pandas.pydata.org/)
-
-* [ProjectTemplate](http://projecttemplate.net/)
 
 * [Matplotlib](https://matplotlib.org/), [seaborn](https://seaborn.pydata.org/), [Bokeh](https://bokeh.pydata.org/en/latest/index.html), [Plotly](https://plot.ly/python/)
 
 * [scikit-learn](https://scikit-learn.org/stable/), [theano](http://deeplearning.net/software/theano/), [PyMC3](https://docs.pymc.io/), [TensorFlow](https://www.tensorflow.org/), [Keras](https://keras.io/), [PyTorch](https://pytorch.org/)
 
-* [testthat](https://testthat.r-lib.org/)
+* [devtools](https://www.rdocumentation.org/packages/devtools), [roxygen2](https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html), [usethis](https://usethis.r-lib.org/), [ProjectTemplate](http://projecttemplate.net/), [testthat](https://testthat.r-lib.org/), [future](https://cran.r-project.org/web/packages/future/index.html), [furrr](https://cran.r-project.org/web/packages/furrr/index.html)
 
-* [r-essentials](https://docs.anaconda.com/anaconda/user-guide/tasks/using-r-language/)
+* [r-essentials](https://docs.anaconda.com/anaconda/user-guide/tasks/using-r-language/), [tidyverse](https://www.tidyverse.org/), [tsibble](https://cran.r-project.org/web/packages/tsibble/index.html), [Rcpp](https://cran.r-project.org/web/packages/Rcpp/index.html), [numDeriv](https://cran.r-project.org/web/packages/numDeriv/index.html), [maxLik](https://cran.r-project.org/web/packages/maxLik/index.html), [statmod](https://cran.r-project.org/web/packages/statmod/index.html), [Tidymodels](https://www.tidymodels.org/)
 
-* [devtools](https://www.rdocumentation.org/packages/devtools), [roxygen2](https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html), [usethis](https://usethis.r-lib.org/)
-
-* [Tidymodels](https://www.tidymodels.org/)
-
-* [styler](https://github.com/r-lib/styler) and [lintr](https://github.com/jimhester/lintr)
-
-* [RColorBrewer](https://cran.r-project.org/web/packages/RColorBrewer/index.html)
-
-* [Rcpp](https://cran.r-project.org/web/packages/Rcpp/index.html), [numDeriv](https://cran.r-project.org/web/packages/numDeriv/index.html), [maxLik](https://cran.r-project.org/web/packages/maxLik/index.html), [statmod](https://cran.r-project.org/web/packages/statmod/index.html)
-
-* [gplots](https://cran.r-project.org/web/packages/gplots/index.html), [tidyverse](https://www.tidyverse.org/), [tsibble](https://cran.r-project.org/web/packages/tsibble/index.html)
-
-* [future](https://cran.r-project.org/web/packages/future/index.html), [furrr](https://cran.r-project.org/web/packages/furrr/index.html)
-
-* [cowplot](https://cran.r-project.org/web/packages/cowplot/vignettes/introduction.html)
+* [gplots](https://cran.r-project.org/web/packages/gplots/index.html), [RColorBrewer](https://cran.r-project.org/web/packages/RColorBrewer/index.html), [cowplot](https://cran.r-project.org/web/packages/cowplot/vignettes/introduction.html)
 
 ## Repository
 
@@ -170,6 +134,3 @@ This repository consist of nine files:
 ## License
 
 Apache 2.0
-
-
-jupyter-lab --ip='0.0.0.0' --port=8888 --no-browser --allow-root
