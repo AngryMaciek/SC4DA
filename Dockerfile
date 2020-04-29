@@ -11,13 +11,13 @@
 ###############################################################################
 
 # BASE IMAGE
-FROM continuumio/miniconda3:4.7.10
+FROM continuumio/miniconda3:4.8.2
 
 # METADATA
-LABEL base.image="miniconda3:4.7.10"
-LABEL version="1.6.0"
+LABEL base.image="miniconda3:4.8.2"
+LABEL version="2.0.0"
 LABEL software="SC4DA"
-LABEL software.version="1.6.0"
+LABEL software.version="2.0.0"
 LABEL software.description=\
 "Environment with standard packages for data analysis."
 LABEL maintainer="wsciekly.maciek@gmail.com"
@@ -33,12 +33,14 @@ ARG WORKDIR="/home/container/"
 ARG USER="USER"
 ARG GROUP="GROUP"
 ARG THEANO_COMPILEDIR="/home/USER/.theano"
+ARG NEXTFLOW_DIR="/home/USER/.nextflow"
+ARG NFCORE_DIR="/home/USER/.nfcore"
 ENV PATH="${WORKDIR}:${PATH}"
 
 # COPY THE YAML & INSTALL SOFTWARE WITH CONDA
-COPY conda_packages.yaml ${WORKDIR}/conda_packages.yaml
-RUN conda env update --name base --file ${WORKDIR}/conda_packages.yaml && \
-conda clean -all
+COPY environment.yml ${WORKDIR}/environment.yml
+RUN conda env update --name base --file ${WORKDIR}/environment.yml --quiet && \
+conda clean --all --force-pkgs-dirs --yes
 
 # COPY THE TEST SCRIPTS
 COPY test.sh ${WORKDIR}/test.sh
@@ -48,14 +50,36 @@ COPY test.py ${WORKDIR}/test.py
 # CREATE USER
 RUN groupadd -r ${GROUP} && useradd --no-log-init -r -g ${GROUP} ${USER}
 
-# SET ENVIRONMENT & CREATE COMPILEDIR FOR PYTHON DL LIBRARIES
+# SET ENVIRONMENT & CREATE INTERNAL DIRS FOR THEANO AND NEXTFLOW
 WORKDIR ${WORKDIR}
 RUN \
 chown -R ${USER}:${GROUP} ${WORKDIR} && \
 chmod 700 ${WORKDIR} && \
 mkdir -p ${THEANO_COMPILEDIR} && \
-chmod 777 ${THEANO_COMPILEDIR}
+chmod 700 ${THEANO_COMPILEDIR} && \
+mkdir -p ${NEXTFLOW_DIR} && \
+chmod 700 ${NEXTFLOW_DIR} && \
+mkdir -p ${NFCORE_DIR} && \
+chmod 700 ${NFCORE_DIR}
 USER ${USER}
 
-# TEST UPON CONTAINER LAUNCH
-CMD ["bash", "test.sh"]
+
+# test rstuduio and jlab ext
+# check conda soft versions
+# check alexs DOckerfiles
+
+
+
+
+# install the dependancies for LaTeX
+#source ~/miniconda3/etc/profile.d/conda.sh
+#conda activate $CWD/env
+#R -e "library('tinytex'); tinytex::install_tinytex()"
+
+# rstudio from conda forge requires stringi-1.4.3 which is not compiled
+# properly. The problem is fixed in stringi-1.4.6 from conda-forge, however
+# rstudio=1.1.456 from r requires older version.
+# Install dll compiled against the OS from R
+#source ~/miniconda3/etc/profile.d/conda.sh
+#conda activate $CWD/env
+#R -e "install.packages('https://cran.r-project.org/src/contrib/Archive/stringi/stringi_1.4.5.tar.gz', repos=NULL, type='source')"
