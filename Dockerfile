@@ -28,6 +28,9 @@ LABEL maintainer.location=\
 # INSTALL C AND C++ COMPILERS
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y g++
 
+# for xetex in R
+RUN apt-get install -y libfontconfig
+
 # VARIABLES
 ARG WORKDIR="/home/container/"
 ARG USER="USER"
@@ -35,28 +38,14 @@ ARG GROUP="GROUP"
 ARG THEANO_COMPILEDIR="/home/USER/.theano"
 ARG NEXTFLOW_DIR="/home/USER/.nextflow"
 ARG NFCORE_DIR="/home/USER/.nfcore"
+ARG TINYTEX_DIR="/home/USER/.TinyTeX"
+ARG USER_LOCAL="/home/USER/.local"
 ENV PATH="${WORKDIR}:${PATH}"
 
 # COPY THE YAML & INSTALL SOFTWARE WITH CONDA
 COPY environment.yml ${WORKDIR}/environment.yml
 RUN conda env update --name base --file ${WORKDIR}/environment.yml && \
 conda clean --all --force-pkgs-dirs --yes
-
-# INSTALL DEPENDANCIES FOR LATEX
-RUN conda activate base && \
-R -e "library('tinytex'); tinytex::install_tinytex()"
-
-
-
-# rstudio from conda forge requires stringi-1.4.3 which is not compiled
-# properly. The problem is fixed in stringi-1.4.6 from conda-forge, however
-# rstudio=1.1.456 from r requires older version.
-# Install dll compiled against the OS from R
-#conda activate $CWD/env
-#R -e "install.packages('https://cran.r-project.org/src/contrib/Archive/stringi/stringi_1.4.5.tar.gz', repos=NULL, type='source')"
-
-
-
 
 # COPY THE TEST SCRIPTS
 COPY test.sh ${WORKDIR}/test.sh
@@ -76,10 +65,21 @@ chmod 777 ${THEANO_COMPILEDIR} && \
 mkdir -p ${NEXTFLOW_DIR} && \
 chmod 777 ${NEXTFLOW_DIR} && \
 mkdir -p ${NFCORE_DIR} && \
-chmod 777 ${NFCORE_DIR}
+chmod 777 ${NFCORE_DIR} && \
+mkdir -p ${TINYTEX_DIR} && \
+chmod 777 ${TINYTEX_DIR} && \
+mkdir -p ${USER_LOCAL} && \
+chmod 777 ${USER_LOCAL}
+
+
+
+# INSTALL DEPENDANCIES FOR LATEX
+#RUN conda activate base && \
+#RUN R -e "library('tinytex'); tinytex::install_tinytex()"
+
+# INSTALL MISSING DLL
+#RUN conda activate base && \
+RUN R -e "install.packages('https://cran.r-project.org/src/contrib/Archive/stringi/stringi_1.4.5.tar.gz', repos=NULL, type='source')"
+
+
 USER ${USER}
-
-
-# test rstuduio and jlab ext
-# check conda soft versions
-# check alexs DOckerfiles

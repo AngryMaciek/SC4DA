@@ -13,8 +13,7 @@ Having a dedicated environment for software development & data analysis can spee
 
 ## About
 
-* The following repositNo
-ory might be utilized to build a *conda* virtual environment asas a *docker* container
+* The following repository might be utilized to build a *conda* virtual environment asas a *docker* container
 
 * It may serve for both exploratory data analysis, tool/package/workflow development as well as a container to execute the software in.
 
@@ -22,17 +21,21 @@ ory might be utilized to build a *conda* virtual environment asas a *docker* con
 
 * Interactive data inspection can be carried out in Jupyter Lab (:Python) or RStudio (:R).
 
+* Main tools and packages of the environment are listed in `environment.yml`. To see the full list please take a look at `docker-build.log`.
+
 ## Creating and running a docker container
 
 Provided you have `docker` installed.  
 In order to build a container please clone this repository and execute `docker build`:
+
 ```bash
-cd
+cd $HOME
 git clone https://github.com/AngryMaciek/SC4DA.git
 docker build -f SC4DA/Dockerfile --tag=sc4da:2.0.0 SC4DA
 ```
 
 To test if all the software have been installed properly activate the container and run test scripts:
+
 ```bash
 docker run -it sc4da:2.0.0 bash
 # in the bash inside the container:
@@ -42,43 +45,37 @@ python test.py
 ```
 
 Alternatively to building you can pull the container from the dockerhub:
+
 ```bash
 docker pull angrymaciek/sc4da:2.0.0
 ```
 
 ## Creating a conda virtual environment
 
-To avoid technical difficulties I prefer to have a virtual environment for interactive work and development. The requirements here are that in order to build one the user needs to have [miniconda3 installed](https://conda.io/projects/conda/en/latest/user-guide/install/index.html) and the host OS (Linux) needs to have `gcc` and `g++` installed. Assuming these requirements are fulfilled virtual environment created based on this repository will have exactly the same software as the container.
+*The following section applies to Linux 64-bit OS only.*
 
-In order to create a conda virtual environment type:
+To build a *conda* virtual environment one requires [miniconda3 installed](https://conda.io/projects/conda/en/latest/user-guide/install/index.html) (as well as C++ and C compilers, usually available on the host machine). Assuming these requirements are fulfilled virtual environment created based on the YAML file inside this repository will have exactly the same software as the container.
+
+In order to create a *conda* virtual environment please type:
 
 ```bash
-
-cd;
-
+cd $HOME;
 git clone https://github.com/AngryMaciek/SC4DA.git;
-
-conda env create --prefix ENV --file SC4DA/conda_packages.yaml
-
+bash SC4DA/create-conda-virtual-environment.sh
 ```
 
-Activate it with:
+To test if all the software have been installed properly activate the environment and run test scripts:
 
 ```bash
-
-conda activate ~/ENV
-
+conda activate $HOME/SC4DA/env
+bash test.sh
+Rscript test.r
+python test.py
 ```
-
-  
 
 ## Snakemake pipelines execution
 
-  
-
-On top of all the above, this container might also serve as an environment to execute [snakemake](https://snakemake.readthedocs.io/en/stable/) pipelines in. Utilising snakemake built-in mechanisms `--use-conda` and `--use-singularity` you can either provide path to the YAML file (to automatically build a virtual environment for all the rules to be executed in) or a URL to this particular container on dockerhub (which will be pulled automatically). Moreover, this environment contains snakemake by itself in order to ease workflow development process.
-
-  
+On top of all the above, this environment might be also utilised to execute Snakemake pipelines in. Utilising snakemake built-in mechanisms `--use-conda` and `--use-singularity` you can either provide path to the YAML file (to automatically build a virtual environment for rules to be executed in) or a URL to this particular container on dockerhub (which will be pulled automatically). Moreover, this environment contains snakemake itself in order to ease workflow development process!
 
 ## Software
 
@@ -134,34 +131,22 @@ Available software include:
 
 ... as well as their dependencies. Full installation logs are available in the build.log file of this repository (which is essentially a redirected standard output of `docker build`). To learn about exact versions of the installed packages please refer to that file.
 
-  
 
 ## Repository
 
 This repository consist of nine files:
   
-
 | File | Description |
-
 | ------ | ------ |
-
 | README.md | (this file) |
-
-| Dockerfile | Instructions for `docker build` |
-
-| test.sh | Bash test script for the installed software |
-
-| test.r | R test script for the installed software |
-
-| test.py | Python test script for the installed software |
-
-| docker-build.log | Standard output after `docker build ...` command |
-
-| environment.yml | Software which will be installed with `conda` |
-
 | LICENSE | Apache License ver 2.0 |
-
-  
+| create-conda-virtual-environment.sh | Bash script to create *conda* virtual environment |
+| environment.yml | Software which will be installed with `conda` |
+| Dockerfile | Instructions for `docker build` |
+| docker-build.log | Standard output after `docker build` command |
+| test.sh | Bash test script for the installed software |
+| test.r | R test script for the installed software |
+| test.py | Python test script for the installed software |
 
 ## License
 
