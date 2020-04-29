@@ -19,7 +19,7 @@ LABEL version="2.0.0"
 LABEL software="SC4DA"
 LABEL software.version="2.0.0"
 LABEL software.description=\
-"Environment with standard packages for data analysis."
+"Environment with tools and packages for data analysis."
 LABEL maintainer="wsciekly.maciek@gmail.com"
 LABEL maintainer.organisation="Swiss Institute of Bioinformatics"
 LABEL maintainer.location=\
@@ -39,8 +39,24 @@ ENV PATH="${WORKDIR}:${PATH}"
 
 # COPY THE YAML & INSTALL SOFTWARE WITH CONDA
 COPY environment.yml ${WORKDIR}/environment.yml
-RUN conda env update --name base --file ${WORKDIR}/environment.yml --quiet && \
+RUN conda env update --name base --file ${WORKDIR}/environment.yml && \
 conda clean --all --force-pkgs-dirs --yes
+
+# INSTALL DEPENDANCIES FOR LATEX
+RUN conda activate base && \
+R -e "library('tinytex'); tinytex::install_tinytex()"
+
+
+
+# rstudio from conda forge requires stringi-1.4.3 which is not compiled
+# properly. The problem is fixed in stringi-1.4.6 from conda-forge, however
+# rstudio=1.1.456 from r requires older version.
+# Install dll compiled against the OS from R
+#conda activate $CWD/env
+#R -e "install.packages('https://cran.r-project.org/src/contrib/Archive/stringi/stringi_1.4.5.tar.gz', repos=NULL, type='source')"
+
+
+
 
 # COPY THE TEST SCRIPTS
 COPY test.sh ${WORKDIR}/test.sh
@@ -56,30 +72,14 @@ RUN \
 chown -R ${USER}:${GROUP} ${WORKDIR} && \
 chmod 700 ${WORKDIR} && \
 mkdir -p ${THEANO_COMPILEDIR} && \
-chmod 700 ${THEANO_COMPILEDIR} && \
+chmod 777 ${THEANO_COMPILEDIR} && \
 mkdir -p ${NEXTFLOW_DIR} && \
-chmod 700 ${NEXTFLOW_DIR} && \
+chmod 777 ${NEXTFLOW_DIR} && \
 mkdir -p ${NFCORE_DIR} && \
-chmod 700 ${NFCORE_DIR}
+chmod 777 ${NFCORE_DIR}
 USER ${USER}
 
 
 # test rstuduio and jlab ext
 # check conda soft versions
 # check alexs DOckerfiles
-
-
-
-
-# install the dependancies for LaTeX
-#source ~/miniconda3/etc/profile.d/conda.sh
-#conda activate $CWD/env
-#R -e "library('tinytex'); tinytex::install_tinytex()"
-
-# rstudio from conda forge requires stringi-1.4.3 which is not compiled
-# properly. The problem is fixed in stringi-1.4.6 from conda-forge, however
-# rstudio=1.1.456 from r requires older version.
-# Install dll compiled against the OS from R
-#source ~/miniconda3/etc/profile.d/conda.sh
-#conda activate $CWD/env
-#R -e "install.packages('https://cran.r-project.org/src/contrib/Archive/stringi/stringi_1.4.5.tar.gz', repos=NULL, type='source')"
