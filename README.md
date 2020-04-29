@@ -19,7 +19,7 @@ Having a dedicated environment for software development & data analysis can spee
 
 * The architecture behind base image is linux, 64bit. Virtual environment is dedicated to this system.
 
-* Interactive data inspection can be carried out in Jupyter Lab (:Python) or RStudio (:R).
+* Interactive data inspection can be carried out in Jupyter Lab (Python and R kernels) or RStudio (R).
 
 * Main tools and packages of the environment are listed in `environment.yml`. To see the full list please take a look at `docker-build.log`.
 
@@ -83,54 +83,73 @@ Versions of software listed in the YAML file are not specified on purpose. Due t
 
 Available software include:
 
-*  [Python](https://www.python.org/), [IPython](https://ipython.org/), [Perl](https://www.perl.org/) and [R](https://www.r-project.org/) interpreters
+* [Python 3](https://www.python.org/), [IPython](https://ipython.org/), [Perl](https://www.perl.org/) and [R](https://www.r-project.org/) interpreters
 
-*  [Make](https://www.gnu.org/software/make/manual/make.html) and [CMake](https://cmake.org/)
+* [Make](https://www.gnu.org/software/make/manual/make.html) and [CMake](https://cmake.org/)
 
-*  [Git](https://git-scm.com/)
+* [Git](https://git-scm.com/)
 
-*  [Cookiecutter](https://github.com/cookiecutter/cookiecutter)
+* [Cookiecutter](https://github.com/cookiecutter/cookiecutter)
 
-*  [Vim](https://github.com/vim/vim)
+* [Vim](https://github.com/vim/vim)
 
-*  [Singularity](https://singularity.lbl.gov/)
+* [Singularity](https://singularity.lbl.gov/)
 
-*  [bedtools](https://bedtools.readthedocs.io/en/latest/), [Samtools](http://www.htslib.org/), [pybedtools](https://daler.github.io/pybedtools/), [pysam](https://pysam.readthedocs.io/en/latest/api.html)
+* [sqlite](https://www.sqlite.org/index.html)
 
-*  [sqlite](https://www.sqlite.org/index.html)
+* [snakemake](https://snakemake.readthedocs.io/en/stable/)
 
-*  [snakemake](https://snakemake.readthedocs.io/en/stable/)
+* [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/)
 
-*  [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/)
+* [Node.js](https://nodejs.org/en/)
 
-*  [sphinx](http://www.sphinx-doc.org/en/master/), [tqdm](https://github.com/tqdm/tqdm), [pytest](https://docs.pytest.org/en/latest/), [Pylint](https://www.pylint.org/), [Black](https://github.com/psf/black)
+* [Nextflow](https://www.nextflow.io/) and [nf-core](https://nf-co.re/)
 
-*  [Biopython](https://biopython.org/)
+* [sphinx](http://www.sphinx-doc.org/en/master/), [tqdm](https://github.com/tqdm/tqdm), [pytest](https://docs.pytest.org/en/latest/), [Pylint](https://www.pylint.org/), [Black](https://github.com/psf/black)
 
-*  [rpy2](https://rpy2.readthedocs.io/en/version_2.8.x/)
+* [Biopython](https://biopython.org/)
 
-*  [NumPy](https://numpy.org/), [SciPy](https://www.scipy.org/), [Statsmodels](https://www.statsmodels.org/stable/index.html), [pandas](https://pandas.pydata.org/)
+* [GNU Bash](https://www.gnu.org/software/bash/)
 
-*  [Matplotlib](https://matplotlib.org/), [seaborn](https://seaborn.pydata.org/), [Bokeh](https://bokeh.pydata.org/en/latest/index.html), [Plotly](https://plot.ly/python/)
+* [Graphviz](https://www.graphviz.org/) and [ImageMagick](https://imagemagick.org/)
 
-*  [scikit-learn](https://scikit-learn.org/stable/), [theano](http://deeplearning.net/software/theano/), [PyMC3](https://docs.pymc.io/), [TensorFlow](https://www.tensorflow.org/), [Keras](https://keras.io/)
+* [cpplint](https://github.com/cpplint/cpplint) and [ClangFormat](https://clang.llvm.org/docs/ClangFormat.html)
 
-* r-essentials
+* [RStudio](https://rstudio.com/)
 
-*  [RColorBrewer](https://cran.r-project.org/web/packages/RColorBrewer/index.html)
+* [BeakerX](http://beakerx.com/)
 
-*  [Rcpp](https://cran.r-project.org/web/packages/Rcpp/index.html), [numDeriv](https://cran.r-project.org/web/packages/numDeriv/index.html), [maxLik](https://cran.r-project.org/web/packages/maxLik/index.html), [statmod](https://cran.r-project.org/web/packages/statmod/index.html)
+* [Beautysh](https://github.com/lovesegfault/beautysh) and [ShellCheck](https://github.com/koalaman/shellcheck)
 
-*  [gplots](https://cran.r-project.org/web/packages/gplots/index.html), [tidyverse](https://www.tidyverse.org/), [tsibble](https://cran.r-project.org/web/packages/tsibble/index.html)
+* [Jinja](https://jinja.palletsprojects.com/)
 
-*  [future](https://cran.r-project.org/web/packages/future/index.html), [furrr](https://cran.r-project.org/web/packages/furrr/index.html)
+* [NumPy](https://numpy.org/), [SciPy](https://www.scipy.org/), [Statsmodels](https://www.statsmodels.org/stable/index.html), [pandas](https://pandas.pydata.org/)
 
-*  [cowplot](https://cran.r-project.org/web/packages/cowplot/vignettes/introduction.html)
+* [ProjectTemplate](http://projecttemplate.net/)
 
-  
+* [Matplotlib](https://matplotlib.org/), [seaborn](https://seaborn.pydata.org/), [Bokeh](https://bokeh.pydata.org/en/latest/index.html), [Plotly](https://plot.ly/python/)
 
-... as well as their dependencies. Full installation logs are available in the build.log file of this repository (which is essentially a redirected standard output of `docker build`). To learn about exact versions of the installed packages please refer to that file.
+* [scikit-learn](https://scikit-learn.org/stable/), [theano](http://deeplearning.net/software/theano/), [PyMC3](https://docs.pymc.io/), [TensorFlow](https://www.tensorflow.org/), [Keras](https://keras.io/), [PyTorch](https://pytorch.org/)
 
+* [testthat](https://testthat.r-lib.org/)
+
+* [r-essentials](https://docs.anaconda.com/anaconda/user-guide/tasks/using-r-language/)
+
+* [devtools](https://www.rdocumentation.org/packages/devtools), [roxygen2](https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html), [usethis](https://usethis.r-lib.org/)
+
+* [Tidymodels](https://www.tidymodels.org/)
+
+* [styler](https://github.com/r-lib/styler) and [lintr](https://github.com/jimhester/lintr)
+
+* [RColorBrewer](https://cran.r-project.org/web/packages/RColorBrewer/index.html)
+
+* [Rcpp](https://cran.r-project.org/web/packages/Rcpp/index.html), [numDeriv](https://cran.r-project.org/web/packages/numDeriv/index.html), [maxLik](https://cran.r-project.org/web/packages/maxLik/index.html), [statmod](https://cran.r-project.org/web/packages/statmod/index.html)
+
+* [gplots](https://cran.r-project.org/web/packages/gplots/index.html), [tidyverse](https://www.tidyverse.org/), [tsibble](https://cran.r-project.org/web/packages/tsibble/index.html)
+
+* [future](https://cran.r-project.org/web/packages/future/index.html), [furrr](https://cran.r-project.org/web/packages/furrr/index.html)
+
+* [cowplot](https://cran.r-project.org/web/packages/cowplot/vignettes/introduction.html)
 
 ## Repository
 
@@ -151,3 +170,6 @@ This repository consist of nine files:
 ## License
 
 Apache 2.0
+
+
+jupyter-lab --ip='0.0.0.0' --port=8888 --no-browser --allow-root
