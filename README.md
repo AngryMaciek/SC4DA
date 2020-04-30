@@ -19,7 +19,7 @@ Having a dedicated environment for software development & data analysis can spee
 
 * The architecture behind *docker* base image is linux, 64bit. Virtual environment is dedicated to this system.
 
-* Interactive data inspection can be carried out in Jupyter Lab (kernels: Python 3, R, Clojure, Groovy, Java, Kotlin, Scala, SQL) or RStudio (R).
+* Interactive data inspection can be carried out in Jupyter Lab (kernels: Python 3, R, Clojure, Groovy, Java, Kotlin, Scala, SQL) or RStudio (only in *conda* environment).
 
 * Main tools and packages of the environment are listed in `environment.yml`. To see the full list please take a look at `docker-build.log`.
 
@@ -93,7 +93,7 @@ Available software include:
 
 * [Vim](https://github.com/vim/vim), [Git](https://git-scm.com/), [Cookiecutter](https://github.com/cookiecutter/cookiecutter), [sphinx](http://www.sphinx-doc.org/en/master/)
 
-* [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/), [BeakerX](http://beakerx.com/), [RStudio](https://rstudio.com/)
+* [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/), [BeakerX](http://beakerx.com/), [RStudio](https://rstudio.com/) (only in *conda* environment)
 
 * [Singularity](https://singularity.lbl.gov/)
 
