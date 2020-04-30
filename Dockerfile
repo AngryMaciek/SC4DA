@@ -20,16 +20,17 @@ LABEL software="SC4DA"
 LABEL software.version="2.0.0"
 LABEL software.description=\
 "Environment with tools and packages for data analysis."
-LABEL maintainer="wsciekly.maciek@gmail.com"
+LABEL maintainer="Maciej Bak"
+LABEL maintainer.email="wsciekly.maciek@gmail.com"
 LABEL maintainer.organisation="Swiss Institute of Bioinformatics"
 LABEL maintainer.location=\
 "Klingelbergstrasse 50/70, CH-4056 Basel, Switzerland"
 
+# PORT FOR JUPYTER LAB
+EXPOSE 8888
+
 # INSTALL C AND C++ COMPILERS
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y g++
-
-# for xetex in R
-RUN apt-get install -y libfontconfig
 
 # VARIABLES
 ARG WORKDIR="/home/container/"
@@ -38,14 +39,18 @@ ARG GROUP="GROUP"
 ARG THEANO_COMPILEDIR="/home/USER/.theano"
 ARG NEXTFLOW_DIR="/home/USER/.nextflow"
 ARG NFCORE_DIR="/home/USER/.nfcore"
-ARG TINYTEX_DIR="/home/USER/.TinyTeX"
-ARG USER_LOCAL="/home/USER/.local"
+ARG USER_LOCAL_DIR="/home/USER/.local"
+ARG JUPYTER_DIR="/home/USER/.jupyter"
+ARG JUPYTER_SHARE_DIR="/opt/conda/share/jupyter"
 ENV PATH="${WORKDIR}:${PATH}"
 
 # COPY THE YAML & INSTALL SOFTWARE WITH CONDA
 COPY environment.yml ${WORKDIR}/environment.yml
 RUN conda env update --name base --file ${WORKDIR}/environment.yml && \
 conda clean --all --force-pkgs-dirs --yes
+
+# INSTALL MISSING DLL
+RUN R -e "install.packages('https://cran.r-project.org/src/contrib/Archive/stringi/stringi_1.4.5.tar.gz', repos=NULL, type='source')"
 
 # COPY THE TEST SCRIPTS
 COPY test.sh ${WORKDIR}/test.sh
@@ -66,20 +71,10 @@ mkdir -p ${NEXTFLOW_DIR} && \
 chmod 777 ${NEXTFLOW_DIR} && \
 mkdir -p ${NFCORE_DIR} && \
 chmod 777 ${NFCORE_DIR} && \
-mkdir -p ${TINYTEX_DIR} && \
-chmod 777 ${TINYTEX_DIR} && \
-mkdir -p ${USER_LOCAL} && \
-chmod 777 ${USER_LOCAL}
-
-
-
-# INSTALL DEPENDANCIES FOR LATEX
-#RUN conda activate base && \
-#RUN R -e "library('tinytex'); tinytex::install_tinytex()"
-
-# INSTALL MISSING DLL
-#RUN conda activate base && \
-RUN R -e "install.packages('https://cran.r-project.org/src/contrib/Archive/stringi/stringi_1.4.5.tar.gz', repos=NULL, type='source')"
-
-
+mkdir -p ${USER_LOCAL_DIR} && \
+chmod 777 ${USER_LOCAL_DIR} && \
+mkdir -p ${JUPYTER_DIR} && \
+chmod 777 ${JUPYTER_DIR} && \
+mkdir -p ${JUPYTER_SHARE_DIR} && \
+chmod -R 777 ${JUPYTER_SHARE_DIR}
 USER ${USER}
