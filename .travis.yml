@@ -1,21 +1,18 @@
-language: ruby
+language: bash
 
 os:
   - linux
 
-services:
-  - docker
-
-before_install:
-  - docker build -f Dockerfile --tag=sc4da:2.0.0 .
-  #- docker run -d -p 127.0.0.1:80:4567 carlad/sinatra /bin/sh -c "cd /root/sinatra; bundle exec foreman start;"
-  - docker ps -a
-  #- docker run -it sc4da:2.0.0 bash
-  #- docker run carlad/sinatra /bin/sh -c "cd /root/sinatra; bundle exec rake test"
+install:
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt update; fi
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh; fi
+  - bash miniconda.sh -b -p $HOME/miniconda
+  - source "$HOME/miniconda/etc/profile.d/conda.sh"
+  - hash -r
+  - conda config --set always_yes yes --set changeps1 no
+  - conda update -q conda
+  - conda info -a
 
 script:
-  - echo 123
-  #- bundle exec rake test
-  #- bash test.sh
-  #- Rscript test.r
-  #- python test.py
+  - bash SC4DA/create-conda-virtual-environment.sh
+  - conda activate $CWD/env && echo $CONDA_DEFAULT_ENV
