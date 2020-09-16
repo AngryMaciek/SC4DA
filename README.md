@@ -118,7 +118,7 @@ Available software include:
 
 ## Repository
 
-This repository consist of 10 files:
+This repository consists of 10 files:
   
 | File | Description |
 | ------ | ------ |
