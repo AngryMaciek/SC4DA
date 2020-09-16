@@ -16,3 +16,4 @@ install:
 script:
   - bash SC4DA/create-conda-virtual-environment.sh
   - conda activate $CWD/env && echo $CONDA_DEFAULT_ENV
+
