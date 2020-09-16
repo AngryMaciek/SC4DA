@@ -118,7 +118,7 @@ Available software include:
 
 ## Repository
 
-This repository consist of nine files:
+This repository consist of 10 files:
   
 | File | Description |
 | ------ | ------ |
@@ -131,6 +131,7 @@ This repository consist of nine files:
 | test.sh | Bash test script for the installed software |
 | test.r | R test script for the installed software |
 | test.py | Python test script for the installed software |
+| .travis.yml | YAML configuration for the Travis CI |
 
 ## License
 
