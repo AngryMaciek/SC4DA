@@ -12,15 +12,11 @@ install:
   - conda config --set always_yes yes --set changeps1 no
   - conda update -q conda
   - conda info -a
-  - conda init bash
-  - source /home/travis/.bashrc
+  #- conda init bash
+  #- source /home/travis/.bashrc
 
 script:
   - travis_wait 30 bash create-conda-virtual-environment.sh
-  - conda env list
-  - echo $HOME
-  - echo $PWD
-  - ls
   - conda activate ./env && echo $CONDA_DEFAULT_ENV
   #- bash test.sh
   #- Rscript test.r
