@@ -17,4 +17,5 @@ install:
 
 script:
   - travis_wait 30 bash create-conda-virtual-environment.sh
+  - conda env list
   - conda activate $CWD/env && echo $CONDA_DEFAULT_ENV
