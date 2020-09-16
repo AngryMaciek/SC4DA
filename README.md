@@ -1,3 +1,5 @@
+[![GitHub license](https://img.shields.io/github/license/AngryMaciek/SC4DA)](https://github.com/AngryMaciek/SC4DA/blob/master/LICENSE)
+
 # SC4DA
 
 *Maciej Bak  
