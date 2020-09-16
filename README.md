@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/AngryMaciek/SC4DA.svg?branch=master)](https://travis-ci.org/AngryMaciek/SC4DA)
 [![GitHub license](https://img.shields.io/github/license/AngryMaciek/SC4DA)](https://github.com/AngryMaciek/SC4DA/blob/master/LICENSE)
 
 # SC4DA
