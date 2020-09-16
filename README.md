@@ -59,8 +59,8 @@ To build a *conda* virtual environment one requires [miniconda3 installed](https
 In order to create a *conda* virtual environment please type:
 
 ```bash
-cd $HOME;
-git clone https://github.com/AngryMaciek/SC4DA.git;
+cd $HOME
+git clone https://github.com/AngryMaciek/SC4DA.git
 bash SC4DA/create-conda-virtual-environment.sh
 ```
 
