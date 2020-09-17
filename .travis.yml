@@ -17,11 +17,10 @@ install:
   #- conda info -a
   - travis_wait 30 docker build -f Dockerfile --tag=sc4da:2.0.0 .
   - docker ps -a
-  - docker run -it sc4da:2.0.0 bash
 
 script:
   #- travis_wait 30 bash create-conda-virtual-environment.sh
   #- conda activate ./env && echo $CONDA_DEFAULT_ENV
-  - bash test.sh
-  - Rscript test.r
-  - python test.py
+  - docker run sc4da:2.0.0 bash test.sh
+  - docker run sc4da:2.0.0 Rscript test.r
+  - docker run sc4da:2.0.0 python test.py
