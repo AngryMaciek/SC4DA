@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/AngryMaciek/SC4DA.svg?branch=master)](https://travis-ci.org/AngryMaciek/SC4DA)
 [![GitHub license](https://img.shields.io/github/license/AngryMaciek/SC4DA)](https://github.com/AngryMaciek/SC4DA/blob/master/LICENSE)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4035181.svg)](https://doi.org/10.5281/zenodo.4035181)
 
 # SC4DA
 
